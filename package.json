@@ -1,33 +1,34 @@
 {
-  "name": "grunt-angular-tags",
-  "version": "0.0.1",
-  "description": "angular-tags wrapper for grunt as plugin",
+  "name": "grunt-ngtags",
+  "version": "0.0.3",
+  "description": "ngtags wrapper for grunt as plugin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/drpicox/grunt-angular-tags.git"
+    "url": "https://github.com/ngtags/grunt-ngtags.git"
   },
   "keywords": [
     "grunt",
     "angular",
     "tags",
-    "components"
+    "components",
+    "ngtags"
   ],
   "author": "David Rodenas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/drpicox/grunt-angular-tags/issues"
+    "url": "https://github.com/ngtags/grunt-ngtags/issues"
   },
-  "homepage": "https://github.com/drpicox/grunt-angular-tags",
+  "homepage": "https://github.com/ngtags/grunt-ngtags",
   "files": [
     "tasks",
     "LICENSE"
   ],
   "dependencies": {
-    "angular-tags": "0.0.1",
+    "ngtags": "0.0.4",
     "chalk": "^0.5.1"
   }
 }

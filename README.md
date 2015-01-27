@@ -1,7 +1,7 @@
-Grunt-angular-tags
+Grunt-ngtags
 ==================
 
-Wraper of [angular-tags](https://github.com/drpicox/angular-tags) for grunt.
+Wraper of [ngtags](https://github.com/ngtags/ngtags) for grunt.
 
 
 Install
@@ -10,7 +10,7 @@ Install
 ```bash
 $ npm install -g grunt-cli
 $ npm install grunt
-$ npm install grunt-angular-tags
+$ npm install grunt-ngtags
 ```
 
 
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    'angular-tags': {
+    'ngtags': {
       options: {
         module: 'aModule',
       },
@@ -35,11 +35,11 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load the plugin that provides the "angular-tags" task.
-  grunt.loadNpmTasks('grunt-angular-tags');
+  // Load the plugin that provides the "ngtags" task.
+  grunt.loadNpmTasks('grunt-ngtags');
 
   // Default task(s).
-  grunt.registerTask('default', ['angular-tags']);
+  grunt.registerTask('default', ['ngtags']);
 
 };
 ```

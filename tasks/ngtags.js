@@ -1,7 +1,7 @@
 'use strict';
 
 var chalk = require('chalk');
-var Translator = require('angular-tags');
+var Translator = require('ngtags');
 
 
 // task implementation
@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 	GruntTranslator.prototype = new Translator();
 	GruntTranslator.prototype.generatorBody = grunt.file.read(GruntTranslator.prototype.generatorFilename);
 
-	grunt.registerMultiTask('angular-tags', 'Convert ntags to angular javascript directives', function () {
+	grunt.registerMultiTask('ngtags', 'Convert ntags to angular javascript directives', function () {
 
 		var options = this.options({ 
 			separator: '\n', 
