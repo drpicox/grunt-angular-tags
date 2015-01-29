@@ -29,8 +29,8 @@ module.exports = function(grunt) {
         module: 'aModule',
       },
       build: {
-        src: 'src/**.ntag',
-        dest: 'dist/ntags.js'
+        src: 'src/**.ngtag',
+        dest: 'dist/ngtags.js'
       }
     }
   });

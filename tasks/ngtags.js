@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 	GruntTranslator.prototype = new Translator();
 	GruntTranslator.prototype.generatorBody = grunt.file.read(GruntTranslator.prototype.generatorFilename);
 
-	grunt.registerMultiTask('ngtags', 'Convert ntags to angular javascript directives', function () {
+	grunt.registerMultiTask('ngtags', 'Convert ngtags to angular javascript directives', function () {
 
 		var options = this.options({ 
 			separator: '\n', 
