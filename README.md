@@ -14,6 +14,51 @@ $ npm install grunt-ngtags
 ```
 
 
+Options
+-------
+
+### module
+
+The AngularJS module where to create directives. Ex:
+
+```javascript
+options: {
+  module: 'yourApp',
+},
+```
+
+### excludeStyle
+
+Boolean, if true do not include styles inside the directive javascript definition. Ex:
+
+```javascript
+options: {
+  excludeStyle: true,
+},
+```
+
+### generateStyle
+
+Boolean, instead of generating a javascript definition, generate the contents of the style.
+
+```javascript
+    ngtags: {
+      options: {
+        module: 'aModule',
+      },
+      styles: {
+        src: 'src/**.ngtag',
+        dest: 'dist/ngtags.css',
+        options: {
+          generateStyle: true,
+        },
+      },
+    },
+```
+
+
+
+
 Configuration
 -------------
 
@@ -24,7 +69,7 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    'ngtags': {
+    ngtags: {
       options: {
         module: 'aModule',
       },

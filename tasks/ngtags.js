@@ -38,22 +38,36 @@ module.exports = function (grunt) {
 
 		function compileNtag(code, options, filepath) {
 			var translator = new GruntTranslator();
+			translator.excludeStyle = options.excludeStyle;
 			translator.inputBody = code;
 			translator.moduleName = options.module || translator.moduleName;
 			translator.parse();
-			translator.generate();
-			return translator.outputBody;
+			if (options.generateStyle) {
+				return translator.style;
+			} else {
+				translator.generate();
+				return translator.outputBody;
+			}
 		}
 
 		function concatOutput(files, options) {
-			var result = '' +
+			var prepend, append;
+
+			if (options.generateStyle) {
+				prepend = append = '\n';
+			} else {
+				prepend = '' +
 				';(function(angular) {\n' +
-				'\t\'use strict\';\n' +
+				'\t\'use strict\';\n';
+				append = '\n})(angular);';
+			}
+
+			var result = prepend +
 				files.map(function(filepath) {				
 					var code = grunt.file.read(filepath);
 					return compileNtag(code, options, filepath);
 				}).join(options.separator) +
-				'\n})(angular);';
+				append;
 
 			return result;
 		}
