@@ -27,6 +27,16 @@ options: {
 },
 ```
 
+### autoprefix
+
+Boolean, if false if skip autoprefix step (useful when less/scss):
+
+```javascript
+options: {
+  autoprefix: false,
+},
+```
+
 ### excludeStyle
 
 Boolean, if true do not include styles inside the directive javascript definition. Ex:

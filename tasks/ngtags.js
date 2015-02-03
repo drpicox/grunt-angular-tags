@@ -40,6 +40,7 @@ module.exports = function (grunt) {
 			var translator = new GruntTranslator();
 			translator.excludeStyle = options.excludeStyle;
 			translator.inputBody = code;
+			translator.enableAutoprefix = options.autoprefix === false ? false : options.autoprefix || translator.enableAutoprefix;
 			translator.moduleName = options.module || translator.moduleName;
 			translator.parse();
 			if (options.generateStyle) {
