@@ -12,10 +12,13 @@ module.exports = function (grunt) {
 		Translator.call(this);
 
 		this.iife = false;
-		delete this.generatorBody;
+		delete this.generators;
 	}
 	GruntTranslator.prototype = new Translator();
-	GruntTranslator.prototype.generatorBody = grunt.file.read(GruntTranslator.prototype.generatorFilename);
+	Object.keys(GruntTranslator.prototype.generators).forEach(function(kind) {
+		var generator = GruntTranslator.prototype.generators[kind];
+		generator.body = grunt.file.read(generator.filename);
+	});
 
 	grunt.registerMultiTask('ngtags', 'Convert ngtags to angular javascript directives', function () {
 
@@ -46,8 +49,7 @@ module.exports = function (grunt) {
 			if (options.generateStyle) {
 				return translator.style;
 			} else {
-				translator.generate();
-				return translator.outputBody;
+				return translator.generate();
 			}
 		}
 
