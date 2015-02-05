@@ -28,7 +28,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "ngtags": "0.0.11",
+    "ngtags": "0.0.14",
     "chalk": "^0.5.1"
   }
 }
