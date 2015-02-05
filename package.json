@@ -1,6 +1,6 @@
 {
   "name": "grunt-ngtags",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "ngtags wrapper for grunt as plugin",
   "main": "index.js",
   "scripts": {
